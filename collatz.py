@@ -4,10 +4,10 @@
 
 # returns number of times function needs to iterate for
 # natural number n such that a sub i = f^i(n)
-def collatz(n, count=1, stored_ints=[]):
+def collatz(n, count=0, stored_ints=[]):
     # is o(N) lookup making program slower?
     if n in stored_ints:
-        return count - 1 + stored_ints[n]
+        return count + stored_ints[n]
     if n == 1:
         return count
     elif n % 2 == 0:
@@ -23,7 +23,7 @@ def collatz(n, count=1, stored_ints=[]):
 solved_ints = dict()
 
 for i in range(1,10):
-    count = collatz(i, 1, solved_ints)
+    count = collatz(i, 0, solved_ints)
     solved_ints[i]=count
 
 print('int', 'iterations')
