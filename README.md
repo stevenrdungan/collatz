@@ -6,9 +6,7 @@ https://en.wikipedia.org/wiki/Collatz_conjecture for background.
 
 Functionality to implement:
 
-* Implement functionality to allow for checking only odd numbers as arguments,
-and return the number of times the function iterates in between evaluating as
-an odd number
+* Implement command line argument parser
 
 * The program works under the assumption the conjecture is true. Is there a
 way to rewrite it to fail gracefully such that for some natural number n there
