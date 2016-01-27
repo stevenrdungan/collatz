@@ -8,7 +8,6 @@
 solved_ints = dict()
 
 def collatz(n, count=0, stored_ints=[]):
-    # is o(N) lookup making program slower?
     if n in stored_ints:
         return count + stored_ints[n]
     if n == 1:
@@ -40,7 +39,6 @@ def collatz_odds(n, secondOdd = False, count = 0):
         count += 1
         return collatz_odds(n, True, count)
     n = n * 3 + 1
-    # count += 1    # do we want this???
     return collatz_odds(n, True, count)
 
 
@@ -48,4 +46,4 @@ def iterate_odds(start,stop):
     for i in range(start, stop):
         if i % 2 == 0:
             continue
-        print(i, str(collatz_odds(i, False, 0)))    
+        print(i, str(collatz_odds(i, False, 0)))
