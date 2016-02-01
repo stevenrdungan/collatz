@@ -10,13 +10,14 @@ parser.add_argument('-start', '--start', nargs='?', type=int,
     required=True, help= 'specify start of range(inclusive)')
 parser.add_argument('-stop', '--stop', nargs='?', type=int,
     required=True, help= 'specify stop of range(non-inclusive)')
-parser.add_argument('-odds', '--odds', nargs='?', type=bool,
+parser.add_argument('-odds', '--odds', action='store_true',
     help= 'iterate for only odd integers, and return ' +
     'number of function iterations between odd evaluations')
 args = parser.parse_args()
 
 start = args.start
 stop = args.stop
-
-iterate(start, stop)
-# iterate_odds(start, stop)
+if args.odds:
+    iterate_odds(start, stop)
+else:
+    iterate(start,stop)
