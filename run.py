@@ -15,9 +15,8 @@ parser.add_argument('-odds', '--odds', nargs='?', type=bool,
     'number of function iterations between odd evaluations')
 args = parser.parse_args()
 
-# add ability to parse optional arguments start, stop, diffOdds
+start = args.start
+stop = args.stop
 
-start = int(input('Enter start: '))
-stop = int(input('Enter stop: '))
-# iterate(start, stop)
-iterate_odds(start, stop)
+iterate(start, stop)
+# iterate_odds(start, stop)
